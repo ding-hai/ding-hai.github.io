@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ding-hai.github.io</id>
     <title>Gridea</title>
-    <updated>2021-02-22T09:26:17.846Z</updated>
+    <updated>2021-02-22T09:34:23.082Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ding-hai.github.io"/>
     <link rel="self" href="https://ding-hai.github.io/atom.xml"/>
@@ -39,7 +39,7 @@
 <p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
 <p>未来，它一定会成为你离不开的伙伴</p>
 <p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+<p>使用git添加新的文件之后，测试同步功能</p>
 ]]></content>
     </entry>
 </feed>
