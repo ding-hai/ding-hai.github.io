@@ -2,11 +2,11 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>关于 | ding-hai&#39;s 博客</title>
+<title>深入讲解Raft分布式共识协议 | ding-hai&#39;s 博客</title>
 <link rel="shortcut icon" href="https://ding-hai.github.io/favicon.ico?v=1614074175686">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://ding-hai.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="关于 | ding-hai&#39;s 博客 - Atom Feed" href="https://ding-hai.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="深入讲解Raft分布式共识协议 | ding-hai&#39;s 博客 - Atom Feed" href="https://ding-hai.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
@@ -20,21 +20,21 @@
 </script>
 
 
-    <meta name="description" content="
-欢迎来到我的小站呀，很高兴遇见你！🤝
+    <meta name="description" content="关于Raft分布式共识协议的介绍网上一搜一大把，在这里就不再赘述了，我直接开门见山，将Raft协议的三个核心部分按照自己的理解记录下来，与大家探讨。
 
-🏠 关于本站
+选举
+日志复制
+集群成员变更
 
-学习笔记，为了加深理解
-记录心情，为了永远铭记
-结识同好，为了不孤陋寡闻
 
-👨‍💻 博主是谁
-Nothing
-⛹ 兴趣爱好
-Nothing
+选举
+日志复制
+集群成员变更
+参考
+
+Raft小论文
 ..." />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="分布式,raft" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -102,44 +102,53 @@ Nothing
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              关于
+              深入讲解Raft分布式共识协议
             </h2>
             <div class="post-info">
               <span>
-                2021-02-22
+                2021-02-23
               </span>
               <span>
                 1 min read
               </span>
               
+                <a href="https://ding-hai.github.io/tag/gM7qYHpVV/" class="post-tag">
+                  # 分布式
+                </a>
+              
+                <a href="https://ding-hai.github.io/tag/e1kt5J9P3/" class="post-tag">
+                  # raft
+                </a>
+              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
+                <p>关于Raft分布式共识协议的介绍网上一搜一大把，在这里就不再赘述了，我直接开门见山，将Raft协议的三个核心部分按照自己的理解记录下来，与大家探讨。</p>
 <ol>
-<li>学习笔记，为了加深理解</li>
-<li>记录心情，为了永远铭记</li>
-<li>结识同好，为了不孤陋寡闻</li>
+<li>选举</li>
+<li>日志复制</li>
+<li>集群成员变更</li>
 </ol>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<p>Nothing</p>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<p>Nothing</p>
+<!-- more -->
+<h1 id="选举">选举</h1>
+<h1 id="日志复制">日志复制</h1>
+<h1 id="集群成员变更">集群成员变更</h1>
+<h1 id="参考">参考</h1>
+<ol>
+<li><a href="https://ramcloud.atlassian.net/wiki/download/attachments/6586375/raft.pdf">Raft小论文</a></li>
+<li><a href="https://github.com/maemual/raft-zh_cn">Raft论文中文翻译</a></li>
+<li><a href="https://raft.github.io/">Raft动画演示</a></li>
+<li><a href="https://juejin.cn/post/6907151199141625870">深度解析 Raft 分布式一致性协议</a></li>
+</ol>
 
               </div>
               <div class="toc-container">
                 <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-</ul>
-</li>
+<li><a href="#%E9%80%89%E4%B8%BE">选举</a></li>
+<li><a href="#%E6%97%A5%E5%BF%97%E5%A4%8D%E5%88%B6">日志复制</a></li>
+<li><a href="#%E9%9B%86%E7%BE%A4%E6%88%90%E5%91%98%E5%8F%98%E6%9B%B4">集群成员变更</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 
               </div>

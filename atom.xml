@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ding-hai.github.io</id>
     <title>ding-hai&apos;s 博客</title>
-    <updated>2021-02-23T04:51:20.667Z</updated>
+    <updated>2021-02-23T09:56:19.271Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ding-hai.github.io"/>
     <link rel="self" href="https://ding-hai.github.io/atom.xml"/>
@@ -10,4 +10,47 @@
     <logo>https://ding-hai.github.io/images/avatar.png</logo>
     <icon>https://ding-hai.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, ding-hai&apos;s 博客</rights>
+    <entry>
+        <title type="html"><![CDATA[从0到1实现一个分布式KV数据库]]></title>
+        <id>https://ding-hai.github.io/post/cong-0-dao-1-shi-xian-yi-ge-fen-bu-shi-kv-shu-ju-ku/</id>
+        <link href="https://ding-hai.github.io/post/cong-0-dao-1-shi-xian-yi-ge-fen-bu-shi-kv-shu-ju-ku/">
+        </link>
+        <updated>2021-02-23T09:56:10.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文主要记录从零开始实现一个分布式的KV数据库，主要包含三个子项目分布式一致性协议Raft的实现，RPC框架的实现，单机KV数据库的实现。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文主要记录从零开始实现一个分布式的KV数据库，主要包含三个子项目分布式一致性协议Raft的实现，RPC框架的实现，单机KV数据库的实现。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[深入讲解LSM-Tree]]></title>
+        <id>https://ding-hai.github.io/post/shen-ru-jiang-jie-lsm-tree/</id>
+        <link href="https://ding-hai.github.io/post/shen-ru-jiang-jie-lsm-tree/">
+        </link>
+        <updated>2021-02-23T09:53:43.000Z</updated>
+        <summary type="html"><![CDATA[<p>WIP</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>WIP</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[深入讲解Raft分布式共识协议]]></title>
+        <id>https://ding-hai.github.io/post/shen-ru-jiang-jie-raft-fen-bu-shi-gong-shi-xie-yi/</id>
+        <link href="https://ding-hai.github.io/post/shen-ru-jiang-jie-raft-fen-bu-shi-gong-shi-xie-yi/">
+        </link>
+        <updated>2021-02-23T09:38:08.000Z</updated>
+        <summary type="html"><![CDATA[<p>关于Raft分布式共识协议的介绍网上一搜一大把，在这里就不再赘述了，我直接开门见山，将Raft协议的三个核心部分按照自己的理解记录下来，与大家探讨。</p>
+<ol>
+<li>选举</li>
+<li>日志复制</li>
+<li>集群成员变更</li>
+</ol>
+]]></summary>
+        <content type="html"><![CDATA[<p>关于Raft分布式共识协议的介绍网上一搜一大把，在这里就不再赘述了，我直接开门见山，将Raft协议的三个核心部分按照自己的理解记录下来，与大家探讨。</p>
+<ol>
+<li>选举</li>
+<li>日志复制</li>
+<li>集群成员变更</li>
+</ol>
+]]></content>
+    </entry>
 </feed>
